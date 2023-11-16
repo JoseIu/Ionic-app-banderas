@@ -1,0 +1,7 @@
+{
+  "name": "banderas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
