@@ -8,29 +8,37 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'by-country',
+        loadChildren: () =>
+          import('../pages/by-country/by-country.module').then(
+            (m) => m.ByCountryPageModule
+          ),
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'by-capital',
+        loadChildren: () =>
+          import('../pages/by-capital/by-capital.module').then(
+            (m) => m.ByCapitalPageModule
+          ),
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'by-region',
+        loadChildren: () =>
+          import('../pages/by-region/by-region.module').then(
+            (m) => m.ByRegionPageModule
+          ),
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
-    ]
+        path: '**',
+        redirectTo: '',
+      },
+    ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+    redirectTo: '/tabs/by-country',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

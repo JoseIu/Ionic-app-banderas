@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title mode="ios">Por Región</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list class="btns">
+    <ion-button
+      class="btns__tbn"
+      *ngFor="let region of regions"
+      (click)="searchByRegion(region)"
+    >
+      {{region}}
+    </ion-button>
+  </ion-list>
+
+  <loader-loader *ngIf="isLoading; else notLoading"></loader-loader>
+
+  <ng-template #notLoading>
+    <country-card [country]="countries"></country-card>
+  </ng-template>
+</ion-content>

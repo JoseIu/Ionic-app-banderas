@@ -1,0 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title mode="ios">Por Capital</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <shared-search (onDebouncer)="searchByCapital($event)"></shared-search>
+
+  <country-card [country]="countries"></country-card>
+</ion-content>
